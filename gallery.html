@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Московский транспорт</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="gallery-header">
+        <div class="flex-header">
+            <div class="header-content">
+                <h1><i class="fas fa-images"></i> Фотогалерея Московского транспорта</h1>
+                <p class="subtitle">Коллекция изображений по теме: <span class="theme-name">Московский транспорт</span></p>
+            </div>
+            <nav>
+                <ul class="flex-nav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> О проекте</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="gallery-container">
+        <div class="controls-panel">
+            <div class="stats">
+                <span class="stat-item">
+                    <i class="fas fa-image"></i>
+                    Изображений: <span id="image-counter">0</span>
+                </span>
+                <span class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    Всего лайков: <span id="total-likes">0</span>
+                </span>
+            </div>
+            <div class="view-controls">
+                <button id="grid-view" class="view-btn active">
+                    <i class="fas fa-th"></i> Сетка
+                </button>
+                <button id="list-view" class="view-btn">
+                    <i class="fas fa-list"></i> Список
+                </button>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <h3><i class="fas fa-filter"></i> Фильтры:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="metro">Метро</button>
+                <button class="filter-btn" data-filter="rail">Рельсовые</button>
+                <button class="filter-btn" data-filter="road">Автотранспорт</button>
+                <button class="filter-btn" data-filter="special">Спецтехника</button>
+                <button class="filter-btn" data-filter="ngt">НГТ</button>
+            </div>
+        </div>
+        
+        <!-- ГАЛЕРЕЯ С ИСПОЛЬЗОВАНИЕМ FLEXBOX -->
+        <div class="gallery-grid" id="image-gallery">
+            <!-- Карточка 1 -->
+            <article class="image-card" data-category="metro">
+                <div class="card-image">
+                    <img src="images/img1.jpg" alt="Ретро-Поезд Сокольники" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="1">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">81-717 "Ретро-Поезд"</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 15 марта 2024</p>
+                    <p class="image-description">Один из первых тематических поездов Москвы на базе "Номерного". Классический состав 81-717, который был стилизован под ретро-дизайн и курсировал по Сокольнической линии.</p>
+                    <div class="image-tags">
+                        <span class="tag">метро</span>
+                        <span class="tag">ретро</span>
+                        <span class="tag">поезд</span>
+                        <span class="tag">рельсовые</span>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Карточка 2 -->
+            <article class="image-card" data-category="special">
+                <div class="card-image">
+                    <img src="images/img2.jpg" alt="Автомотриса на базе 81-760 Ока" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Секретная автомотриса</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 1 октября 2016</p>
+                    <p class="image-description">Уникальная автомотриса на базе состава "Ока" (81-760/761), созданная для служебных нужд метрополитена. Была замечена всего один раз в депо. Назначение и текущая судьба остаются загадкой.</p>
+                    <div class="image-tags">
+                        <span class="tag">метро</span>
+                        <span class="tag">спецтехника</span>
+                        <span class="tag">секретно</span>
+                        <span class="tag">рельсовые</span>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Карточка 3 -->
+            <article class="image-card" data-category="rail">
+                <div class="card-image">
+                    <img src="images/img3.jpg" alt="Беспилотный трамвай Львенок М" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="3">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Беспилотный трамвай "Львенок М"</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 5 апреля 2024</p>
+                    <p class="image-description">Первый российский беспилотный трамвай от Трансмашхолдинга. Проходит испытания на маршрутах Москвы. Оснащен системой автономного управления, которая распознает препятствия и сигналы светофора.</p>
+                    <p class="image-note"><small>* В Москве трамвайная система управляется Московским метрополитеном.</small></p>
+                    <div class="image-tags">
+                        <span class="tag" title="Наземный городской транспорт">НГТ</span>
+                        <span class="tag">трамвай</span>
+                        <span class="tag">беспилотный</span>
+                        <span class="tag">инновации</span>
+                        <span class="tag">метро</span>
+                        <span class="tag">рельсовые</span>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Карточка 4 -->
+            <article class="image-card" data-category="road">
+                <div class="card-image">
+                    <img src="images/img4.jpg" alt="Электробус Камаз 52222 с измененными дверьми" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="4">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Электробус Камаз 52222</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 1 сентября 2025</p>
+                    <p class="image-description">Новый электробус Камаз 52222 с измененной конструкцией дверей - последние две двери открываются по типу трамвая "Витязь М". Уникальная особенность, которая ускоряет посадку и высадку пассажиров.</p>
+                    <div class="image-tags">
+                        <span class="tag" title="Наземный городской транспорт">НГТ</span>
+                        <span class="tag">камаз</span>
+                        <span class="tag">электробус</span>
+                        <span class="tag">инновации</span>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Карточка 5 -->
+            <article class="image-card" data-category="metro">
+                <div class="card-image">
+                    <img src="images/img5.jpg" alt="Депо Митино Московского метро" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="5">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Депо "Митино"</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 18 апреля 2024</p>
+                    <p class="image-description">Современное электродепо Арбатско-Покровской линии. Открыто в 2009 году, обслуживает составы типов "Русич" и "Москва". Одно из самых технологичных депо, где проводится полный цикл обслуживания подвижного состава.</p>
+                    <div class="image-tags">
+                        <span class="tag">метро</span>
+                        <span class="tag">депо</span>
+                        <span class="tag">технологии</span>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Карточка 6 -->
+            <article class="image-card" data-category="metro">
+                <div class="card-image">
+                    <img src="images/img6.jpg" alt="Ретро поезд ЕЖ3 Московского метро" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="6">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">81-707 "Новогодний ЕЖ-3"</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 25 декабря 2023</p>
+                    <p class="image-description">Исторический состав ЕЖ3, который использовался в Московском метрополитене. Восстановленный ретро-поезд, демонстрирующий развитие метростроения. Раритетный экземпляр, сохранивший атмосферу прошлых лет.</p>
+                    <div class="image-tags">
+                        <span class="tag">метро</span>
+                        <span class="tag">ретро</span>
+                        <span class="tag">ЕЖ3</span>
+                        <span class="tag">рельсовые</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <aside class="gallery-info">
+            <h3><i class="fas fa-lightbulb"></i> Интересный факт</h3>
+            <p>Московское метро - одно из самых загруженных в мире. Ежедневно им пользуются более 7 миллионов пассажиров. Длина всех линий составляет более 400 км.</p>
+        </aside>
+    </main>
+    
+    <footer class="gallery-footer">
+        <div class="footer-flex">
+            <div class="footer-column">
+                <h4><i class="fas fa-train"></i> О проекте</h4>
+                <p>Сайт посвящён Московскому транспорту - метро, трамваям, электробусам и другим видам городского транспорта.</p>
+            </div>
+            <div class="footer-column">
+                <h4><i class="fas fa-link"></i> Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4><i class="fas fa-envelope"></i> Контакты</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Москва, Россия</p>
+                <p><i class="fas fa-envelope"></i> info@transport-moscow.ru</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-content">
+                <p>&copy; <span id="current-year">2026</span> Роман Носов, студент 1 курса. Все права защищены.</p>
+                <p class="js-status">JavaScript загружен и работает!</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ПОДКЛЮЧЕНИЕ JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
